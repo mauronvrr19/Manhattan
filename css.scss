@@ -1,0 +1,493 @@
+@mixin fontstyle($fontsize, $color) {
+    font-size: $fontsize;
+    color: $color;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+// sass 
+
+* {
+    color: white;
+}
+
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #0a0a0a90;
+}
+
+/* index */
+.carousel-inner {
+    // corrusel de bootstrap
+    width: 100%;
+    height: 30vh;
+
+    img {
+        height: 60vh;
+        object-fit: cover;
+    }
+}
+
+.logo {
+    //  logo de manhattan
+    width: 100px;
+    margin: 20px;
+}
+
+h1 {
+    // titulo de las web + include
+    @include fontstyle(30px, white);
+    line-height: 50px;
+    font: weight 100px;
+}
+
+.iconos {
+    //  iconos para la version de escritorio
+    width: 100%;
+
+    ul li {
+        color: #000;
+        box-sizing: border-box;
+        text-align: left;
+        letter-spacing: 1px;
+
+        i a {
+            display: inline-block;
+            font-size: 25px;
+            width: 200px;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            padding-top: 40px;
+
+        }
+    }
+}
+
+.todo {
+    //  texto que acompaña la grilla de imagenes
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #0a0a0a80;
+
+    .nosotros {
+        // estilo para el texto
+        width: 50vw;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        padding: 30px;
+
+    }
+}
+
+.imagen {
+    //  grilla de imagenes
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: 200px 200px 200px;
+    grid-gap: 10px;
+    padding: 30px;
+
+    .imgs {
+        // detalles para las imagenes
+        border: 3px solid white;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+}
+
+footer {
+    // pie de pagina
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    margin-top: 60px;
+    border: 1px solid black;
+
+    .pie {
+        // detalles para el pie de pagina
+        text-align: center;
+
+        p {
+            color: white;
+
+            a {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+/* carta */
+
+h2 {
+    @include fontstyle(20px, white);
+    line-height: 50px;
+}
+
+
+.cardMaster {
+    // bootstrap-cartas en carta.hmtl
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .card {
+        background-color: #0a0a0a80;
+
+        .card-img-top {
+            width: 100%;
+        }
+    }
+
+}
+
+// // envio.html  
+
+.mapa {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: 40px;
+
+    .mapaImagen {
+        text-align: center;
+
+        img {
+            width: 55%;
+            border: 1px solid white;
+        }
+    }
+
+    .mapaTexto {
+        width: 45%;
+
+        p {
+            width: 60%;
+        }
+    }
+
+}
+
+.ubi {
+    width: 100%;
+    text-align: center;
+
+}
+
+
+/* pago */
+.pagos {
+    // medios de pagos
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    img {
+        width: 60%;
+    }
+
+    .pagosQr {
+        //imagen qr
+        width: 25%;
+        border: 1px solid black;
+
+    }
+}
+
+/* contacto */
+
+.formulario {
+    // formulario  
+    margin: auto;
+    width: 50vw;
+    background-color: #0a0a0a80;
+    padding: 10px;
+
+    .enviar {
+        text-align: center;
+        padding: 10px;
+
+    }
+}
+
+.what {
+    // logo de whatsap
+    text-align: center;
+
+    img {
+        width: 5%;
+    }
+}
+
+.reparto {
+    // imagenes de los delivery
+    text-align: center;
+    margin-top: 20px;
+
+    img {
+        width: 60%;
+        height: 50vh;
+    }
+}
+
+
+@media screen AND (min-width: 0px) AND (max-width:500px) {
+
+    //    version mobile
+    .iconos {
+        // estilo para los iconos
+        width: 100%;
+
+        ul li {
+            letter-spacing: 4px;
+
+            i a {
+                letter-spacing: 8px;
+                padding-top: 15px;
+                font-size: 20px;
+            }
+        }
+    }
+
+
+    .todo {
+        //  texto que acompaña la grilla de imagenes
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0a0a0a80;
+        padding: auto;
+        width: 100vw;
+
+        .nosotros {
+            width: 100vw;
+            letter-spacing: 1px;
+            font-size: 80%;
+        }
+    }
+
+    .imagen {
+        //  grilla de imagenes
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(4, 150px);
+        grid-gap: 5px;
+
+        .imgs {
+            // detalles para las imagenes
+            border: 3px solid white;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+
+    .logo {
+        display: none;
+    }
+
+    h1 {
+        font-size: 100%;
+        text-align: center;
+        line-height: 30px;
+
+    }
+
+    h2 {
+        font-size: 90%;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    h3 {
+        font-size: 80%;
+        text-align: center;
+
+    }
+
+    .pie {
+        text-align: center;
+    }
+
+    .mapa {
+        // mapa + texto + ubicacion
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mapaTexto {
+            width: 100%;
+            margin: 10px;
+
+            p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+    }
+
+    .pagos {
+        // metodos de pagos
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        img {
+            width: 100%;
+        }
+
+        .pagosQr {
+            width: 50%;
+            border: 1px solid black;
+
+        }
+    }
+
+    footer {
+        width: 100%;
+        position: absolute;
+    }
+}
+
+@media screen AND (min-width: 501px) AND (max-width:1000px) {
+    //    version tablet, despues de los 1000px, version escritorio
+
+
+
+    .iconos {
+        //  iconos para la version de escritorio
+        width: 100%;
+
+        ul li {
+            box-sizing: border-box;
+            text-align: center;
+
+            i a {
+                display: inline-block;
+                font-size: 25px;
+                box-sizing: border-box;
+                width: 140px;
+            }
+        }
+    }
+
+    .todo {
+        //  texto que acompaña la grilla de imagenes
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0a0a0a80;
+
+        .nosotros {
+            width: 100%;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            padding: 30px;
+
+        }
+    }
+
+    .imagen {
+        //  grilla de imagenes
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        grid-template-rows: 300px 300px 300px;
+        grid-gap: 10px;
+        padding: 30px;
+
+        .imgs {
+            // detalles para las imagenes
+            border: 3px solid white;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+
+    .logo {
+        display: none;
+    }
+
+    h1 {
+        font-size: 170%;
+    }
+
+    h2 {
+        font-size: 150%;
+    }
+
+    h3 {
+        font-size: 125%;
+    }
+
+    p {
+        font-size: 110%;
+    }
+
+    .mapa {
+        // mapa + texto + ubicacion
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mapaTexto {
+            width: 100%;
+            margin: 10px;
+
+            p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+    }
+
+    .pagos {
+        // metodos de pagos
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        img {
+            width: 100%;
+        }
+
+        .pagosQr {
+            width: 50%;
+            border: 1px solid black;
+
+        }
+    }
+
+
+
+}
